@@ -1,9 +1,11 @@
 ---
-import styles from "./styles.module.css";
+import s from "./styles.module.css";
 ---
 
-<div class={styles.container}>
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/blog/">Blog</a>
-</div>
+<nav class={s.nav}>
+  <ul class={s.list}>
+    <li class={s.item}><a class={s.link} href="/">Home</a></li>
+    <li class={s.item}><a class={s.link} href="/about/">About</a></li>
+    <li class={s.item}><a class={s.link} href="/blog/">Blog</a></li>
+  </ul>
+</nav>
