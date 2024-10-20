@@ -1,0 +1,16 @@
+---
+import s from "./styles.module.css";
+import "./styles.css";
+---
+
+<button class="startButton" type="button" id="primary-button">
+  Zaczynamy
+</button>
+
+<script>
+  const button = document.querySelector(".startButton");
+  button!.addEventListener("click", () => {
+    const section = document.getElementById("secondsection");
+    section?.scrollIntoView({ behavior: "smooth" });
+  });
+</script>

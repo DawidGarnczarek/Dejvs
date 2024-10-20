@@ -1,0 +1,15 @@
+.startButton {
+  margin-top: 16px;
+  background: none;
+  border: 2px solid rgb(255, 162, 0); /* Bez obramowania */
+  color: rgb(255, 162, 0);
+  border-radius: 5px;
+  padding: 16px 28px; /* Wewnętrzny odstęp */
+  font-size: 20px; /* Rozmiar czcionki */
+  cursor: pointer; /* Zmiana kursora */
+  transition: transform 0.2s ease; /* Płynne przejście dla transformacji */
+}
+
+.startButton:hover {
+  transform: scale(1.05); /* Lekko unieś przycisk na hover */
+}

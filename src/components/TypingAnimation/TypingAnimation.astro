@@ -1,0 +1,39 @@
+---
+import s from "./styles.module.css";
+---
+
+<div>
+  <h2 id="myName"></h2>
+  <h2 id="mySpec"></h2>
+  <h1 class={s.hello}>
+    Cześć, jestem <span class={s.name}>Dawid Garnczarek</span>
+  </h1>
+</div>
+
+<script>
+  import Typewriter from "typewriter-effect/dist/core";
+
+  //   if (typeof document !== "undefined") {
+  //     const myNameTypewriter = new Typewriter(document.getElementById("myName"), {
+  //       loop: false,
+  //       delay: 50,
+  //       cursor: "",
+  //     });
+  //     const mySpecTypewriter = new Typewriter(document.getElementById("mySpec"), {
+  //       loop: false,
+  //       delay: 50,
+  //       cursor: "",
+  //     });
+
+  //     myNameTypewriter
+  //       .typeString("Cześć, jestem Dawid Garnczarek!")
+  //       .pauseFor(500)
+  //       .deleteChars(17)
+  //       .typeString("deJvS!")
+  //       .start();
+  //     mySpecTypewriter
+  //       .pauseFor(5500)
+  //       .typeString("Jestem web developerem")
+  //       .start();
+  //   }
+</script>
