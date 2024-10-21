@@ -2,98 +2,18 @@
 import Navigation from "../components/navigation/Navigation.astro";
 import TypingAnimation from "../components/TypingAnimation/TypingAnimation.astro";
 import PrimaryButton from "../components/buttons/StartButton.astro";
+import Footer from "../components/footer/Footer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 import s from "./styles.module.css";
 
 import "../styles/global.css";
-
-const handleClick = () => {
-  console.log("Hello");
-  alert("Przycisk został kliknięty!");
-};
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <!-- <Navigation /> -->
-    <section class={s.intro}>
-      <TypingAnimation />
-      <PrimaryButton />
-    </section>
-    <section id="secondsection">
-      <h2>More content</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla est
-        augue, euismod eget erat non, feugiat vulputate nisi. Fusce viverra odio
-        id pretium pharetra. Vivamus tincidunt cursus quam, et porta felis
-        gravida vitae. Nunc non dictum felis. Proin risus tortor, tristique et
-        sem placerat, accumsan imperdiet tortor. Nam faucibus consectetur
-        hendrerit. Sed sit amet suscipit felis, sed laoreet lorem. Nunc dui
-        lacus, imperdiet vel consectetur in, pulvinar gravida leo. Duis
-        hendrerit, justo commodo interdum luctus, ante libero vehicula diam, sed
-        vehicula neque diam ac est. Class aptent taciti sociosqu ad litora
-        torquent per conubia nostra, per inceptos himenaeos. Suspendisse
-        potenti. Etiam tincidunt massa in ipsum semper dignissim.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla est
-        augue, euismod eget erat non, feugiat vulputate nisi. Fusce viverra odio
-        id pretium pharetra. Vivamus tincidunt cursus quam, et porta felis
-        gravida vitae. Nunc non dictum felis. Proin risus tortor, tristique et
-        sem placerat, accumsan imperdiet tortor. Nam faucibus consectetur
-        hendrerit. Sed sit amet suscipit felis, sed laoreet lorem. Nunc dui
-        lacus, imperdiet vel consectetur in, pulvinar gravida leo. Duis
-        hendrerit, justo commodo interdum luctus, ante libero vehicula diam, sed
-        vehicula neque diam ac est. Class aptent taciti sociosqu ad litora
-        torquent per conubia nostra, per inceptos himenaeos. Suspendisse
-        potenti. Etiam tincidunt massa in ipsum semper dignissim.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla est
-        augue, euismod eget erat non, feugiat vulputate nisi. Fusce viverra odio
-        id pretium pharetra. Vivamus tincidunt cursus quam, et porta felis
-        gravida vitae. Nunc non dictum felis. Proin risus tortor, tristique et
-        sem placerat, accumsan imperdiet tortor. Nam faucibus consectetur
-        hendrerit. Sed sit amet suscipit felis, sed laoreet lorem. Nunc dui
-        lacus, imperdiet vel consectetur in, pulvinar gravida leo. Duis
-        hendrerit, justo commodo interdum luctus, ante libero vehicula diam, sed
-        vehicula neque diam ac est. Class aptent taciti sociosqu ad litora
-        torquent per conubia nostra, per inceptos himenaeos. Suspendisse
-        potenti. Etiam tincidunt massa in ipsum semper dignissim.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla est
-        augue, euismod eget erat non, feugiat vulputate nisi. Fusce viverra odio
-        id pretium pharetra. Vivamus tincidunt cursus quam, et porta felis
-        gravida vitae. Nunc non dictum felis. Proin risus tortor, tristique et
-        sem placerat, accumsan imperdiet tortor. Nam faucibus consectetur
-        hendrerit. Sed sit amet suscipit felis, sed laoreet lorem. Nunc dui
-        lacus, imperdiet vel consectetur in, pulvinar gravida leo. Duis
-        hendrerit, justo commodo interdum luctus, ante libero vehicula diam, sed
-        vehicula neque diam ac est. Class aptent taciti sociosqu ad litora
-        torquent per conubia nostra, per inceptos himenaeos. Suspendisse
-        potenti. Etiam tincidunt massa in ipsum semper dignissim.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla est
-        augue, euismod eget erat non, feugiat vulputate nisi. Fusce viverra odio
-        id pretium pharetra. Vivamus tincidunt cursus quam, et porta felis
-        gravida vitae. Nunc non dictum felis. Proin risus tortor, tristique et
-        sem placerat, accumsan imperdiet tortor. Nam faucibus consectetur
-        hendrerit. Sed sit amet suscipit felis, sed laoreet lorem. Nunc dui
-        lacus, imperdiet vel consectetur in, pulvinar gravida leo. Duis
-        hendrerit, justo commodo interdum luctus, ante libero vehicula diam, sed
-        vehicula neque diam ac est. Class aptent taciti sociosqu ad litora
-        torquent per conubia nostra, per inceptos himenaeos. Suspendisse
-        potenti. Etiam tincidunt massa in ipsum semper dignissim.
-      </p>
-    </section>
-  </body>
-</html>
+<BaseLayout>
+  <section class={s.intro}>
+    <TypingAnimation />
+    <PrimaryButton />
+  </section>
+  <section id="secondsection"></section>
+</BaseLayout>
