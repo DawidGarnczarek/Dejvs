@@ -1,12 +1,29 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import type { MarkdownPostLayoutFrontmatter } from "./types";
 
-const { frontmatter } = Astro.props;
+interface Props {
+  frontmatter: MarkdownPostLayoutFrontmatter;
+}
+
+const { frontmatter }: { frontmatter: MarkdownPostLayoutFrontmatter } =
+  Astro.props;
+const { title, shortDescription, pubDate, sections } = frontmatter;
 ---
 
 <BaseLayout>
-  <h1>{frontmatter.title}</h1>
-  <p>{frontmatter.description}</p>
-  <p>Written by {frontmatter.author}</p>
+  <h1>{title}</h1>
+  <p>{shortDescription}</p>
+  <p>{pubDate}</p>
+  <main>
+    {
+      sections.map((section) => (
+        <section>
+          <h2>{section.heading}</h2>
+          <p>{section.content}</p>
+        </section>
+      ))
+    }
+  </main>
   <slot />
 </BaseLayout>
