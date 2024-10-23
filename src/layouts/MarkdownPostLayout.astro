@@ -1,6 +1,7 @@
 ---
-import BaseLayout from "./BaseLayout.astro";
+import BaseLayout from "./baseLayout/BaseLayout.astro";
 import type { MarkdownPostLayoutFrontmatter } from "./types";
+import s from "./styles.module.css";
 
 interface Props {
   frontmatter: MarkdownPostLayoutFrontmatter;
@@ -12,18 +13,19 @@ const { title, shortDescription, pubDate, sections } = frontmatter;
 ---
 
 <BaseLayout>
-  <h1>{title}</h1>
-  <p>{shortDescription}</p>
-  <p>{pubDate}</p>
-  <main>
-    {
-      sections.map((section) => (
-        <section>
-          <h2>{section.heading}</h2>
-          <p>{section.content}</p>
-        </section>
-      ))
-    }
+  <main class={s.postContainer}>
+    <h1>{title}</h1>
+    <p>{shortDescription}</p>
+    <p>{pubDate}</p>
+    <main>
+      {
+        sections.map((section) => (
+          <section>
+            <h2>{section.heading}</h2>
+            <p>{section.content}</p>
+          </section>
+        ))
+      }
+    </main>
   </main>
-  <slot />
 </BaseLayout>

@@ -1,0 +1,6 @@
+.postContainer {
+  background-color: rgb(65, 65, 65);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
