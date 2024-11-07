@@ -1,6 +1,7 @@
 .nav {
   position: absolute;
   right: 0;
+  top: 0;
 }
 
 /* Stylowanie listy nawigacyjnej */
@@ -20,7 +21,7 @@
 
 .link {
   text-decoration: none;
-  color: white;
+  color: rgb(135, 24, 137);
   font-size: 18px;
 }
 
@@ -28,3 +29,8 @@
   /* color: #ddd; */
   color: rgb(255, 162, 0);
 }
+/* #1C1C1C background */
+/* #171717 background */
+/* #262626 button */
+/* #DADADA text */
+/* #ACACAC text light */
