@@ -1,8 +1,19 @@
+.section {
+  min-height: 100vh;
+  position: relative;
+  margin-top: 64px;
+}
+
 .intro {
-  /* background-color: red; */
+  background-color: rgb(138, 138, 138);
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.secondsection {
+  height: 100vh;
+  background-color: aquamarine;
 }

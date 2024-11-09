@@ -2,9 +2,76 @@
 import s from "./styles.module.css";
 ---
 
-<nav class={s.nav}>
-  <ul class={s.list}>
-    <li class={s.item}><a class={s.link} href="/">About</a></li>
-    <li class={s.item}><a class={s.link} href="/blog/">Blog</a></li>
+<nav id="navbar" class="navbar show">
+  <ul class="list">
+    <li class="item"><a class="link" href="/">About</a></li>
+    <li class="item"><a class="link" href="/blog/">Blog</a></li>
   </ul>
 </nav>
+
+<style>
+  .navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 56px;
+    background-color: #1c1c1c;
+    color: #fff;
+    text-align: center;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  .hide {
+    transform: translateY(-100%);
+  }
+
+  .show {
+    transform: translateY(0);
+  }
+
+  .list {
+    list-style: none; /* Usunięcie punktów listy */
+    display: flex;
+    justify-content: flex-end; /* Ustawienie elementów od prawej strony */
+    margin-right: 16px;
+  }
+
+  /* Stylowanie poszczególnych elementów */
+  .item {
+    padding: 16px 16px;
+  }
+
+  .link {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+  }
+</style>
+
+<script>
+  let lastScrollTop = 0;
+
+  window.addEventListener("scroll", () => {
+    const navbar = document.getElementById("navbar");
+    if (!navbar) {
+      return;
+    }
+
+    const currentScrollTop =
+      window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScrollTop > lastScrollTop) {
+      // Przewijanie w dół – ukryj navbar
+      navbar.classList.add("hide");
+      navbar.classList.remove("show");
+    } else {
+      // Przewijanie w górę – pokaż navbar
+      navbar.classList.add("show");
+      navbar.classList.remove("hide");
+    }
+
+    lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Zapobieganie ujemnym wartościom
+  });
+</script>

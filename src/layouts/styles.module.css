@@ -1,4 +1,5 @@
 .postContainer {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   max-width: 680px;
@@ -7,6 +8,7 @@
   background-color: #171717;
   color: #dadada;
   margin: 0 auto;
+  margin-top: 64px;
   padding: 64px 0;
 }
 
