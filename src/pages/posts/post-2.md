@@ -5,7 +5,7 @@ description: "Mały opis do testu, ale tez troche wiekszy co by sprawdzic wyglad
 image:
   url: "https://docs.astro.build/assets/arc.webp"
   alt: "The Astro logo on a dark background with a purple gradient arc."
-pubDate: 2022-07-08
+pubDate: "2022-07-01"
 tags: ["astro", "blogging", "learning in public", "successes"]
 ---
 

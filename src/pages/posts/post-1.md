@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-pubDate: 2022-07-01
+pubDate: "2022-07-01"
 title: "Różnica między subdomeną a domeną"
 description: "Sed id libero libero. Aenean scelerisque efficitur ex nec condimentum. Cras eget diam a nulla mattis ullamcorper. Morbi tincidunt arcu ante, sed porttitor magna congue at. Fusce sed fringilla metus. Aenean non cursus mi, molestie varius libero. Quisque non velit et tellus convallis maximus."
 sections:

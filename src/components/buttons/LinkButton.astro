@@ -9,9 +9,15 @@ const { text, url } = Astro.props;
 <style>
   .buttonLink {
     text-decoration: none;
-    border: 1px solid orange;
+    border: 1px solid white;
     padding: 8px 16px;
     border-radius: 8px;
     color: rgb(255, 255, 255);
+  }
+
+  .buttonLink:hover {
+    /* border-color: orange; */
+    transform: scale(1.1);
+    transition: transform 0.2s;
   }
 </style>

@@ -15,8 +15,8 @@ const { title, description, pubDate, sections } = frontmatter;
 <BaseLayout>
   <main class={s.postContainer}>
     <h1>{title}</h1>
-    <p>{description}</p>
     <p class={s.publicationDate}>{pubDate}</p>
+    <p>{description}</p>
     <div class={s.line}></div>
     <main>
       {
