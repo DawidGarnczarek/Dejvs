@@ -5,7 +5,7 @@ export interface Section {
 
 export interface MarkdownPostLayoutFrontmatter {
   title: string;
-  shortDescription: string;
+  description: string;
   pubDate: string;
   sections: Section[];
   tags: string[];

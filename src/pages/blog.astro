@@ -1,31 +1,25 @@
 ---
+import BlogCard from "../components/blogCard/BlogCard.astro";
 import BaseLayout from "../layouts/baseLayout/BaseLayout.astro";
+// import BlogCard from "../components/blogCard/BlogCard.astro";
 import "../styles/global.css";
 import s from "./styles.module.css";
 
-import fs from "fs";
-import path from "path";
-
-const postsDir = path.resolve("./src/pages/posts");
-const postFiles = fs.readdirSync(postsDir);
-
-const posts = postFiles
-  .filter((file) => file.endsWith(".md"))
-  .map((file) => {
-    return {
-      title: file.replace(".md", ""),
-      file: file.replace(".md", ""),
-    };
-  });
+const allPosts = await Astro.glob("./posts/*.md");
 ---
 
 <BaseLayout>
-  <main class={s.section}>
-    <ul>
+  <main class=`${s.section} ${s.blog}`>
+    <ul class={s.cardList}>
       {
-        posts.map((post) => (
+        allPosts.map((post) => (
           <li>
-            <a href={`/posts/${post.file}`}>{post.title}</a>
+            <BlogCard
+              url={post.url}
+              title={post.frontmatter.title}
+              description={post.frontmatter.description}
+              tags={post.frontmatter.tags}
+            />
           </li>
         ))
       }

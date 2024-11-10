@@ -17,3 +17,16 @@
   height: 100vh;
   background-color: aquamarine;
 }
+
+.blog {
+  display: flex;
+  justify-content: center;
+}
+
+.cardList {
+  margin-top: 8px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

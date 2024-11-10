@@ -9,13 +9,13 @@ interface Props {
 
 const { frontmatter }: { frontmatter: MarkdownPostLayoutFrontmatter } =
   Astro.props;
-const { title, shortDescription, pubDate, sections } = frontmatter;
+const { title, description, pubDate, sections } = frontmatter;
 ---
 
 <BaseLayout>
   <main class={s.postContainer}>
     <h1>{title}</h1>
-    <p>{shortDescription}</p>
+    <p>{description}</p>
     <p class={s.publicationDate}>{pubDate}</p>
     <div class={s.line}></div>
     <main>
