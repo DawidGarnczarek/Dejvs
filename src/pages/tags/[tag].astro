@@ -1,8 +1,11 @@
 ---
+import type { MarkdownInstance } from "astro";
 import BaseLayout from "../../layouts/baseLayout/BaseLayout.astro";
+import type { MarkdownPostLayoutFrontmatter } from "../../layouts/types";
 
 export async function getStaticPaths() {
-  const allPosts = await Astro.glob("../posts/*.md");
+  const allPosts: MarkdownInstance<MarkdownPostLayoutFrontmatter>[] =
+    await Astro.glob("../posts/*.md");
   return [
     { params: { tag: "astro" }, props: { posts: allPosts } },
     { params: { tag: "successes" }, props: { posts: allPosts } },
