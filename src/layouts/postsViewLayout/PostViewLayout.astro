@@ -1,0 +1,80 @@
+---
+import BlogCard from "../../components/blogCard/BlogCard.astro";
+import BaseLayout from "../baseLayout/BaseLayout.astro";
+// import BlogCard from "../components/blogCard/BlogCard.astro";
+// import "../styles/global.css";
+import s from "../../pages/styles.module.css";
+
+const allPosts = await Astro.glob("../../pages/posts/*.md");
+const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+const { posts, activeTag } = Astro.props;
+---
+
+<div class=`container`>
+  <div class="tagsContainer">
+    {
+      tags.map((tag) => {
+        const isActive = tag === activeTag;
+        return (
+          <a href={`/blog/${tag}`}>
+            <p class={`tag ${isActive && "activeTag"}`}>{tag}</p>
+          </a>
+        );
+      })
+    }
+    <a href={`/blog/`}>
+      <p class={`tag clearTag`}>Clear</p>
+    </a>
+  </div>
+  <ul class={s.cardList}>
+    {
+      posts.map((post: any) => (
+        <li>
+          <BlogCard
+            url={post.url}
+            title={post.frontmatter.title}
+            description={post.frontmatter.description}
+            tags={post.frontmatter.tags}
+            date={post.frontmatter.pubDate}
+          />
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tagsContainer {
+    display: flex;
+    gap: 8px;
+    margin: 16px 0;
+  }
+
+  .tag {
+    background-color: #333;
+    color: #fff;
+    padding: 8px;
+    border-radius: 8px;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .clearTag {
+    background-color: wheat;
+    color: black;
+  }
+
+  .activeTag {
+    background-color: orange;
+  }
+</style>

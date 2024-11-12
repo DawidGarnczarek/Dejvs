@@ -1,29 +1,17 @@
 ---
 import BlogCard from "../components/blogCard/BlogCard.astro";
 import BaseLayout from "../layouts/baseLayout/BaseLayout.astro";
+import MainSectionLayout from "../layouts/mainSectionLayout/MainSectionLayout.astro";
+import PostViewLayout from "../layouts/postsViewLayout/PostViewLayout.astro";
 // import BlogCard from "../components/blogCard/BlogCard.astro";
-import "../styles/global.css";
 import s from "./styles.module.css";
 
 const allPosts = await Astro.glob("./posts/*.md");
+const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
 ---
 
 <BaseLayout>
-  <main class=`${s.section} ${s.blog}`>
-    <ul class={s.cardList}>
-      {
-        allPosts.map((post) => (
-          <li>
-            <BlogCard
-              url={post.url}
-              title={post.frontmatter.title}
-              description={post.frontmatter.description}
-              tags={post.frontmatter.tags}
-              date={post.frontmatter.pubDate}
-            />
-          </li>
-        ))
-      }
-    </ul>
-  </main>
+  <MainSectionLayout>
+    <PostViewLayout posts={allPosts} activeTag="all" />
+  </MainSectionLayout>
 </BaseLayout>
